@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-base-darkblue: #065E7C;
+  --color-base-lightnlue: #ffffff33;
+  --color-base-blue: #387E96;
+  --color-base-white: #ffffff;
+  --color-base-title: #202024;
+  --color-base-text: #121214;
+}
+
+body, html, input, main {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+
+body .page {
+
+
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100vh;
+
+  width: 100%;
+}
+
+
+header {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1.2rem 2.8rem;
+  gap: 2.5rem;
+
+  animation: move .2s;
+  --startY: 100%;
+
+
+  background-color: var(--color-base-darkblue);
+}
+
+.container {
+
+  width: min(128rem, 100%);
+  overflow-y: scroll;
+  margin: 0 auto;
+
+
+}
+
+form label {
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+}
+
+form {
+  flex: 1;  
+}
+
+form input {
+  padding: 1.2rem 1.6rem;
+  border-radius: .4rem;
+  border: 0;
+  outline: 0; /* propriedade para remover a borda que o navegador coloca */
+  width: 100%;
+
+  background-color: var(--color-base-lightnlue);
+  color: var(--color-base-white);
+
+  
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: var(--color-base-white);
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+header .avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+header .paw {
+  background-color: var(--color-base-white);
+  border-radius: 9999px;
+
+  padding: .9rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+
+
+
+
+.title, main p, nav {
+  padding: 0 2.2rem ;
+}
+
+.gato {
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+
+}
+
+.title {
+  margin-top: 3.1rem;
+}
+
+main p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-base-text);
+  line-height: 160%;
+  width: 38.2rem;
+
+  margin: 3rem 0;
+}
+
+figure {
+
+  display: grid;
+  grid-template-columns: repeat(2, max-content 21.5rem);
+
+  margin: 3.2rem 0;
+  gap: 1.6rem;
+}
+
+
+figcaption p {
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%; 
+  
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.page footer {
+  background-color: var(--color-base-blue);
+  color: var(--color-base-white);
+
+  height: 6.4rem;
+}
+
+footer p {
+  text-align: center;
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+button {
+  border: 0;
+  outline: 0;
+
+  padding: 1.3rem;  
+
+  margin: .8rem 1rem 0 0;
+  border-radius: 99rem;
+  background-color: var(--color-base-darkblue);
+}
+
+button img {
+  align-items: center;
+  justify-items: center;
+}
+.gato:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transition: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.cats:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: scale(1.0) rotate(-2deg);
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.paw:hover, .avatar:hover, button:hover {
+  transform: scale(1.2) rotate(-2deg);
+  transition-timing-function: ease-out;
+  transition-duration: 200ms;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 1.2rem 14rem;
+
+  }
+
+  .container {
+    display: flex;
+    gap: 3.4rem;
+
+    padding: 3.6rem 0;
+
+  }
+  
+  main, .cat{
+    width: 80.3rem;
+
+  }
+
+  main p {
+    width: auto;
+    padding-left: 0;
+    padding-bottom: 3.6rem;
+
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.2rem;
+    padding: 0;
+
+  }
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.cards {
+  animation: appear .4s var(--delay) backwards;
+  --delay: 1ms
+}
